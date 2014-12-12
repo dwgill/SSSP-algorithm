@@ -12,6 +12,8 @@ if __name__ == '__main__':
         dest = int(dest)
 
         validity, path_to_end = graph.parse_graph(src, graph_str, dest, dijkstra=False)
+        if not validity:
+            print 'Graph was invalid—had negative weight cycle.'
         print path_to_end
         
     else:

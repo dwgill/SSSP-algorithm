@@ -9,7 +9,6 @@ edge_re  = r"\((?P<src>\d+),?\s*(?P<dest>\d+)\):\s*(?P<weight>[-+]?(\d+(\.\d*)?|
 
 def parse_graph(src, graph_str, dest=None, dijkstra=True):
     if not re.match(graph_re, graph_str):
-        import pdb; pdb.set_trace()
         raise ValueError('Invalid Graph format.')
 
     num_vertices, edges_str = re.split(r"\s+", graph_str, maxsplit=1)
